@@ -23,7 +23,7 @@ pip install pandas numpy sqlalchemy matplotlib
 
 Run the Python script to create and load data into SQLite:
 
-5555555555555555555555555555555555555555555555555555555555555555555555555555555555
+https://github.com/Risanaparvin00/Clinical-Trial-Analysis-Using-Python-And-SQL/blob/main/Analsis.py
 
 This will generate three CSV files and populate the SQLite database.
 
