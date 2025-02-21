@@ -31,7 +31,7 @@ This will generate three CSV files and populate the SQLite database.
 
 Open SQLite and connect to the database:
 
-######%5555555555555555555555555555555555555555555555555555555555555555555555555555555555555555555
+https://github.com/Risanaparvin00/Clinical-Trial-Analysis-Using-Python-And-SQL/blob/main/SQL%20code%20for%20drug%20reaction%20data%20loaded.txt
 
 Run the SQL queries from queries.sql:
 
@@ -49,7 +49,6 @@ SELECT gender, COUNT(*) FROM patients GROUP BY gender;
 📌 Sample Graph: Gender Distribution
 
 
-###########4444455555555555555555555555555555555555555555555555555555555555
 
 ---
 
