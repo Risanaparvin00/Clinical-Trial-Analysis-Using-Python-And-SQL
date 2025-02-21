@@ -48,7 +48,7 @@ SELECT gender, COUNT(*) FROM patients GROUP BY gender;
 
 📌 Sample Graph: Gender Distribution
 
-
+https://github.com/Risanaparvin00/Clinical-Trial-Analysis-Using-Python-And-SQL/blob/main/Gender%20visualization%20of%20drug%20reaction%20data.jpeg
 
 ---
 
