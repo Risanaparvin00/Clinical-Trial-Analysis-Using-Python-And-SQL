@@ -1,0 +1,71 @@
+SQLite version 3.49.1 2025-02-18 13:38:58
+Enter ".help" for usage hints.
+Connected to a transient in-memory database.
+Use ".open FILENAME" to reopen on a persistent database.
+sqlite>  SELECT gender COUNT(*) AS count  FROM patient GROUP BY gender;
+Parse error: near "(": syntax error
+  SELECT gender COUNT(*) AS count  FROM patient GROUP BY gender;
+                     ^--- error here
+sqlite> .open ClinicalTrialsDB.db
+sqlite>  SELECT gender COUNT(*) AS count  FROM patient GROUP BY gender;
+Parse error: near "(": syntax error
+  SELECT gender COUNT(*) AS count  FROM patient GROUP BY gender;
+                     ^--- error here
+sqlite>  SELECT gender, COUNT(*) AS count  FROM patient GROUP BY gender;
+Female|48
+Male|52
+sqlite> SELECT CASE
+   ...> WHEN age < 30 THEN 'Under 30'
+   ...> WHEN age BETWEEN 30 AND 60 THEN '30-60'
+   ...> ELSE '60+'
+   ...> END AS age_group,
+   ...> COUNT(*) AS count
+   ...> FROM patient
+   ...> GROUP BY age_group;
+30-60|44
+60+|37
+Under 30|19
+sqlite> SELECT drug_name, event_type, COUNT(*) AS event_count FROM adverse_event GROUP BY drug_name, event_type ORDER BY event_coun DESC;
+Parse error: no such column: event_coun
+  rse_event GROUP BY drug_name, event_type ORDER BY event_coun DESC;
+                                      error here ---^
+sqlite> SELECT drug_name, event_type, COUNT(*) AS event_count FROM adverse_event GROUP BY drug_name, event_type ORDER BY event_count DESC;
+Drug D|Headache|16
+Drug A|Fatigue|9
+Drug B|Fatigue|9
+Drug A|Dizziness|8
+Drug D|Dizziness|7
+Drug A|Nausea|6
+Drug C|Headache|6
+Drug C|Nausea|6
+Drug A|Headache|5
+Drug B|Dizziness|5
+Drug B|Headache|5
+Drug C|Fatigue|4
+Drug D|Fatigue|4
+Drug D|Nausea|4
+Drug B|Nausea|3
+Drug C|Dizziness|3
+sqlite> SELECT phase, AVG(efficacy) AS avg_efficacy FROM treatment GROUP BY phase ORDER BY phase;
+1|0.75
+2|0.65
+3|0.85
+4|0.7
+sqlite> SELECT p.patient_id, p.age, p.gender, t.drug_name, t.efficacy, t.phase FROM patient p JOIN treatment t ON p.treatment_id = t.treatment_id LI
+MIT 10;
+Parse error: no such column: t.drug_name
+  SELECT p.patient_id, p.age, p.gender, t.drug_name, t.efficacy, t.phase FROM pa
+                          error here ---^
+sqlite> SELECT p.patient_id, p.age, p.gender, t.drug_names, t.efficacy, t.phase FROM patient p JOIN treatment t ON p.treatment_id = t.treatment_id L
+IMIT 10;
+1|56|Male|Drug A|0.75|1
+2|69|Female|Drug D|0.7|4
+3|46|Female|Drug B|0.65|2
+4|32|Male|Drug D|0.7|4
+5|60|Female|Drug B|0.65|2
+6|25|Female|Drug D|0.7|4
+7|78|Female|Drug C|0.85|3
+8|38|Female|Drug D|0.7|4
+9|56|Female|Drug C|0.85|3
+10|75|Female|Drug C|0.85|3
+sqlite>

@@ -1,0 +1,5 @@
+treatment_id,drug_names,efficacy,phase
+1,Drug A,0.75,1
+2,Drug B,0.65,2
+3,Drug C,0.85,3
+4,Drug D,0.7,4
