@@ -5,7 +5,7 @@ This project involves generating synthetic clinical trial data, loading it into 
 
 Since you uploaded the files manually, others can download them using:
 
-Click on Code → Download, then extract the files.
+Click on Code → Download ZIP, then extract the files.
 
 OR, if using Git:
 
