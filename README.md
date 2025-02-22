@@ -10,7 +10,7 @@ Click on Code → Download ZIP, then extract the files.
 OR, if using Git:
 
 git clone https://github.com/Risanaparvin00/Clinical-Trial-Analysis-Using-Python-And-SQL.git
-cd Clinical-Trial-Analysis
+
 
 
 2️⃣ Install Required Libraries
